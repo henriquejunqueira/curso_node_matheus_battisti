@@ -1,8 +1,8 @@
-// modulos externos
+// ! modulos externos
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 
-// modulos internos
+// ! modulos internos
 import fs from 'fs';
 
 operation();
@@ -31,6 +31,7 @@ function operation() {
       } else if (action === 'Depositar') {
         deposit();
       } else if (action === 'Consultar Saldo') {
+        getAccountBalance();
       } else if (action === 'Sacar') {
       } else if (action === 'Sair') {
         console.log(chalk.bgBlue.black('Obrigado por usar o Accounts!'));
@@ -40,7 +41,7 @@ function operation() {
     .catch((err) => console.log(err));
 }
 
-// create an account
+// TODO create an account
 function createAccount() {
   console.log(chalk.bgGreen.black('Parabéns por escolher o nosso banco!'));
   console.log(chalk.green('Defina as opções da sua conta a seguir'));
@@ -87,7 +88,7 @@ function buildAccount() {
     .catch((err) => console.log(err));
 }
 
-// add an amount to user account
+// TODO add an amount to user account
 function deposit() {
   inquirer
     .prompt([
@@ -99,7 +100,7 @@ function deposit() {
     .then((answer) => {
       const accountName = answer['accountName'];
 
-      // verify if account exists
+      // ? verify if account exists
       if (!checkAccount(accountName)) {
         return deposit();
       }
@@ -114,7 +115,7 @@ function deposit() {
         .then((answer) => {
           const amount = answer['amount'];
 
-          // add an amount
+          // ? add an amount
           addAmount(accountName, amount);
           operation();
         })
@@ -166,4 +167,34 @@ function getAccount(accountName) {
   });
 
   return JSON.parse(accountJSON);
+}
+
+// TODO show account balance
+function getAccountBalance() {
+  inquirer
+    .prompt([
+      {
+        name: 'accountName',
+        message: 'Qual o nome da sua conta?',
+      },
+    ])
+    .then((answer) => {
+      const accountName = answer['accountName'];
+
+      // ? verify if account exists
+      if (!checkAccount(accountName)) {
+        return getAccountBalance();
+      }
+
+      const accountData = getAccount(accountName);
+
+      console.log(
+        chalk.bgBlue.black(
+          `Olá, o saldo da sua conta é de R$${accountData.balance}`
+        )
+      );
+
+      operation();
+    })
+    .catch((err) => console.log(err));
 }
