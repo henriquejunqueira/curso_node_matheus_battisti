@@ -12,6 +12,10 @@
 
 ## Note:
 
+- To install the dependencies of the files containing nodel_modules, simply run the following command:
+
+`npm install`
+
 - To run the module files, simply have nde installed on your machine. Then go to the directory with the js file using the terminal or cmd and type:
 
 `node file_name.js`
