@@ -8,6 +8,7 @@
 - Module 04 - Fundamentals of npm;
 - Modulo 05 - Accounts Project;
 - Modulo 06 - Introduction to Express;
+- Module 07 - Template Engine with Express;
 
 ## Note:
 
