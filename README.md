@@ -9,6 +9,7 @@
 - Modulo 05 - Accounts Project;
 - Modulo 06 - Introduction to Express;
 - Module 07 - Template Engine with Express;
+- Module 07 - Node.js integration with MySQL;
 
 ## Note:
 
