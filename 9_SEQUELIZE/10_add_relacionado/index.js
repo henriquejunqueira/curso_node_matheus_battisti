@@ -97,6 +97,24 @@ app.get('/', async (req, res) => {
   res.render('home', { users: users });
 });
 
+app.post('/address/create', async (req, res) => {
+  const UserId = req.body.UserId;
+  const street = req.body.UserId;
+  const number = req.body.number;
+  const city = req.body.city;
+
+  const address = {
+    UserId,
+    street,
+    number,
+    city,
+  };
+
+  await Address.create(address);
+
+  res.redirect(`/users/edit/${UserId}`);
+});
+
 // o sync mapeia e cria a tabela e logo depois é feita a conexão
 conn
   .sync()
