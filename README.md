@@ -10,7 +10,8 @@
 - Modulo 06 - Introduction to Express;
 - Module 07 - Template Engine with Express;
 - Module 08 - Node.js integration with MySQL;
-- Module 09 - Using Sequelize with Node.js
+- Module 09 - Using Sequelize with Node.js;
+- Module 10 - MVC architecture with Node.js;
 
 ## Note:
 
