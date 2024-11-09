@@ -3,6 +3,7 @@ import { engine } from 'express-handlebars';
 import conn from './db/conn.js';
 
 import User from './models/User.js';
+import Address from './models/Address.js';
 
 const app = express();
 
@@ -98,8 +99,8 @@ app.get('/', async (req, res) => {
 
 // o sync mapeia e cria a tabela e logo depois é feita a conexão
 conn
-  .sync()
-  //.sync({ force: true }) // dá um drop nas tabelas e recria (usar apenas quando necessário)
+  // .sync()
+  .sync({ force: true }) // dá um drop nas tabelas e recria (usar apenas quando necessário)
   .then(() => {
     app.listen(3000);
   })
