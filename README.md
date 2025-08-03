@@ -67,3 +67,11 @@ or
 - Removing packages with npm:
 
 `npm uninstall <package_name>`
+
+- Sequelize ORM installation:
+
+`npm install sequelize`
+
+- Installing mysql2 for use with Sequelize:
+
+`npm install mysql2`
