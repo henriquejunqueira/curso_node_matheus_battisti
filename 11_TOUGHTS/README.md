@@ -22,10 +22,14 @@
 - models: Armazena os models do MVC
 - node_modules: Armazena os módulos do projeto
 - public/css: Armazena o css
+- public/css/styles.css: Arquivo de estilo do projeto
+- public/img: Armazena imagens utilizadas no projeto
+- public: Armazena os arquivos e diretórios públicos do projeto
 - routes: Armazena os arquivos de rotas
 - sessions: Armazena as sessões do sistema
 - views: Armazena as views do MVC
 - views/layouts: Armazena o layout do projeto
+- views/layouts/main.handlebars: Arquivo de layout do projeto
 - .gitignore: Diz para o git quais pastas ou arquivos não devem subir para o github
 - index.js: Arquivo principal do projeto (na raiz)
 - package.json: Armazena as configurações do projeto
