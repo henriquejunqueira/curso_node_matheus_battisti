@@ -8,9 +8,19 @@ const app = express();
 
 const conn = require('./db/conn');
 
+// Models
+const Tought = require('./models/Tought');
+const User = require('./models/User');
+
+// Import Routes
+const toughtsRoutes = require('./routes/toughtsRoutes');
+
+// Import Controller
+const ToughtController = require('./controllers/ToughtController');
+
 // define a template engine como o handlebars
 app.engine('handlebars', engine());
-app.set('view engine');
+app.set('view engine', 'handlebars');
 
 // recebe resposta do body
 app.use(
@@ -58,7 +68,13 @@ app.use((req, res, next) => {
   next();
 });
 
+// Routes
+app.use('/toughts', toughtsRoutes);
+
+app.get('/', ToughtController.showToughts);
+
 conn
+  //   .sync({ force: true }) // força o sequelize para refazer as tabelas
   .sync()
   .then(() => {
     app.listen(3000);
