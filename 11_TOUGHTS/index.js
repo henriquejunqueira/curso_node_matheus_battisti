@@ -76,7 +76,7 @@ app.use('/', authRoutes);
 app.get('/', ToughtController.showToughts);
 
 conn
-  //   .sync({ force: true }) // força o sequelize para refazer as tabelas
+  // .sync({ force: true }) // força o sequelize para refazer as tabelas
   .sync()
   .then(() => {
     app.listen(3000);
